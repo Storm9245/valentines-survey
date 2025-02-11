@@ -9,6 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="preload" href="https://tenor.com/view/moti-hearts-gif-24884258" as="image">
     <link rel="preload" href="https://tenor.com/view/cat-stare-gif-22341545" as="image">
+    <link rel="preload" href="https://tenor.com/view/happy-gif-12345" as="image"> <!-- Example happy gif -->
+    <link rel="preload" href="https://tenor.com/view/sad-gif-67890" as="image"> <!-- Example sad gif -->
 </head>
 <body style="background-color:lightcoral; margin: 0; height: 100vh;" onload="onPageLoad()">
 
@@ -45,6 +47,24 @@
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </div>
 
+    <!-- GIF Embed for "Yes!" response -->
+    <div class="d-flex justify-content-center" style="margin-top: 20px;" id="happyGifContainer" style="display: none;">
+        <div class="tenor-gif-embed" data-postid="12345" data-share-method="host" data-aspect-ratio="1.32231" data-width="50%">
+            <a href="https://tenor.com/view/happy-gif-12345">Happy GIF</a> from 
+            <a href="https://tenor.com/search/happy-gifs">Happy GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
+    <!-- GIF Embed for "No!" response -->
+    <div class="d-flex justify-content-center" style="margin-top: 20px;" id="sadGifContainer" style="display: none;">
+        <div class="tenor-gif-embed" data-postid="67890" data-share-method="host" data-aspect-ratio="1.32231" data-width="50%">
+            <a href="https://tenor.com/view/sad-gif-67890">Sad GIF</a> from 
+            <a href="https://tenor.com/search/sad-gifs">Sad GIFs</a>
+        </div>
+        <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    </div>
+
     <script>
         function onPageLoad() {
             console.log("Page and all resources have loaded!");
@@ -54,12 +74,14 @@
         // Event listeners to change the GIF when a button is clicked
         document.getElementById('yes1').addEventListener('click', function() {
             document.getElementById('gifContainer').style.display = 'none'; // Hide the first GIF
-            document.getElementById('secondGifContainer').style.display = 'block'; // Show the second GIF
+            document.getElementById('secondGifContainer').style.display = 'none'; // Hide second GIF
+            document.getElementById('happyGifContainer').style.display = 'block'; // Show happy GIF
         });
 
         document.getElementById('no1').addEventListener('click', function() {
             document.getElementById('gifContainer').style.display = 'none'; // Hide the first GIF
-            document.getElementById('secondGifContainer').style.display = 'block'; // Show the second GIF
+            document.getElementById('secondGifContainer').style.display = 'none'; // Hide second GIF
+            document.getElementById('sadGifContainer').style.display = 'block'; // Show sad GIF
         });
     </script>
 
