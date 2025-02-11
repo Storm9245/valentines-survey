@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -41,66 +42,23 @@
         </div>
         <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
     </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const yesButton = document.getElementById('yes1');
             const noButton = document.getElementById('no1');
-            const gif1 = document.querySelector('.tenor-gif-embed[data-postid="24884258"]');
-            const gif2 = document.querySelector('.tenor-gif-embed[data-postid="22341545"]');
             let noPressCount = 0;
 
-            console.log('DOM fully loaded and parsed');
-
             yesButton.addEventListener('click', function() {
-                console.log('Yes button clicked');
-                const gif1Link = gif1.querySelector('a');
-                const gif2Link = gif2.querySelector('a');
-                if (gif1Link && gif2Link) {
-                    // Replace GIFs with new GIFs for "Yes" button click
-                    gif1.dataset.postid = "12186015021689896619";
-                    gif1Link.href = "https://tenor.com/view/besito-catlove-gif-12186015021689896619";
-                    gif1Link.textContent = "Besito Catlove GIF";
-
-                    gif2.dataset.postid = "15355044296113816836";
-                    gif2Link.href = "https://tenor.com/view/cat-dance-dancing-cat-chinese-dancing-cat-funny-cat-meme-cat-gif-15355044296113816836";
-                    gif2Link.textContent = "Cat Dance GIF";
-                } else {
-                    console.error('GIF links not found');
-                }
+                window.location.href = 'yes.html';
             });
 
             noButton.addEventListener('click', function() {
-                console.log('No button clicked');
                 noPressCount++;
-                const gif1Link = gif1.querySelector('a');
-                const gif2Link = gif2.querySelector('a');
-                if (gif1Link && gif2Link) {
-                    if (noPressCount === 1) {
-                        console.log('First No button click');
-                        // Replace GIFs with new GIFs for first "No" button click
-                        gif1.dataset.postid = "565199966538985343";
-                        gif1Link.href = "https://tenor.com/view/side-eye-dog-tiktok-meme-side-eye-dog-gif-565199966538985343";
-                        gif1Link.textContent = "Side Eye Dog GIF";
-
-                        gif2.dataset.postid = "15737766168092599624";
-                        gif2Link.href = "https://tenor.com/view/dog-laughing-funny-dog-laughing-laughing-hysterically-lol-gif-15737766168092599624";
-                        gif2Link.textContent = "Dog Laughing GIF";
-                    } else if (noPressCount === 2) {
-                        console.log('Second No button click');
-                        // Replace GIFs with new GIFs for second "No" button click
-                        gif1.dataset.postid = "16369069069238100747";
-                        gif1Link.href = "https://tenor.com/view/really-gif-16369069069238100747";
-                        gif1Link.textContent = "Really GIF";
-
-                        gif2.dataset.postid = "22533744";
-                        gif2Link.href = "https://tenor.com/view/twilight-sparkle-mordecai-mordetwi-gif-22533744";
-                        gif2Link.textContent = "Twilight Sparkle Mordecai GIF";
-
-                        // Hide the "No" button
-                        noButton.style.display = 'none';
-                    }
-                } else {
-                    console.error('GIF links not found');
+                if (noPressCount === 1) {
+                    window.location.href = 'no1.html';
+                } else if (noPressCount === 2) {
+                    window.location.href = 'no2.html';
                 }
             });
         });
